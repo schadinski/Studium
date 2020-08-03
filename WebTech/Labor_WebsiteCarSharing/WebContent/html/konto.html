@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="myCarSharing by Katharina Schwab">
+<meta name="keywords" content="carsharing, rent a car, myCarSharing">
+<meta name="author" content="Katharina Schwab">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- css einbinden -->
+<link rel="stylesheet" href="../css/default.css">
+<!-- javascript einbinden -->
+<script src="../js/konto.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>myCarSharing</title>
+</head>
+<body onload="initialize()">
+	<div id="wrapper">
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target="#myNavbar">
+						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html">myCarSharing</a>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul id="nav1" class="nav navbar-nav">
+						<!-- Dropdown -->
+						<li class="dropdown"><a href="ueberUns.html"
+							data-toggle="dropdown" class="dropdown-toggle">Über uns <span
+								class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="ueberUns.html#allgemeines">Allgemeines</a></li>
+								<li><a href="ueberUns.html#leitbild">Leitbild</a></li>
+								<li><a href="ueberUns.html#standorte">Standorte und
+										Flotte</a></li>
+								<li><a href="ueberUns.html#mehrwert">Mehrwert für
+										unsere Kunden</a></li>
+								<li><a href="ueberUns.html#partner">Partner</a></li>
+								<li><a href="ueberUns.html#referenzen">Referenzen</a></li>
+
+								<li><a href="fakten.html">Fakten</a></li>
+
+							</ul></li>
+
+						<li><a href="preise.html">Preise</a></li>
+						<li><a href="reservierung.html">Reservierung</a></li>
+						<li><a href="stellplaetze.html">Stellplätze</a></li>
+						<li><a href="allerlei.html">Allerlei</a></li>
+					</ul>
+
+					<ul id="nav2" class="nav navbar-nav navbar-right">
+						<!--Suchmaske-->
+						<li id="Suche">
+							<form action="http://google.de/search" method="get"
+								target="_blank">
+								<div class="input-group">
+									<input type="text" class="form-control" placeholder="Suche"
+										name="q">
+									<div class="input-group-btn">
+										<button class="btn btn-default" type="submit">
+											<i class="glyphicon glyphicon-search"></i>
+										</button>
+									</div>
+								</div>
+							</form>
+						</li>
+						<!--mein Konto, Anmeldemaske	-->
+						<li><a href="konto.html"><span
+								class="glyphicon glyphicon-user" aria-hidden="true"> </span>
+								mein Konto</a></li>
+						<li><a href="kontakt.html"> <span
+								class="glyphicon glyphicon-envelope" aria-hidden="true">
+							</span> Kontakt
+						</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<header id="logo">
+			<div class="container">
+				<div class="jumbotron">
+					<img src="../images/logo.png" alt="Logo">
+				</div>
+			</div>
+		</header>
+
+		<main>
+		<div class="container">
+			<div class="jumbotron">
+
+				<div class="panel panel-default panel_konto">
+					<div class="panel-heading">
+						<h3>Login</h3>
+					</div>
+					<form class="form-horizontal form_konto"
+						action="http://141.79.64.139/cstippek/FormCheck.php" method="get">
+						<div class="form-group">
+							<label for="kundennummer" class="control-label col-sm-2">Kundennummer</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" id="kundennummer"
+									maxlength="20" required="required" name="knr"
+									autofocus="autofocus" tabindex="1" autocomplete="on">
+							</div>
+
+							<label for="pw" class="control-label col-sm-1">Passwort</label>
+							<div class="col-sm-3">
+								<input type="password" class="form-control" id="pw"
+									maxlength="20" required="required" name="pw" tabindex="2"
+									autocomplete="off">
+							</div>
+							<button class="btn btn-default" type="submit">Login</button>
+						</div>
+					</form>
+				</div>
+
+				<div class="panel panel-default panel_konto">
+					<div class="panel-heading">
+						<h3>Registrierung</h3>
+					</div>
+					<form class="form-horizontal form_konto"
+						action="http://141.79.64.139/cstippek/FormCheck.php" method="get"
+						autocomplete="on">
+
+						<div class="form-group">
+							<label for="anrede" class="control-label col-sm-2">Anrede*</label>
+							<div class="col-sm-10">
+								<label class="radio-inline"> <input type="radio"
+									class="form-control" id="anrede" name="anrede" value="Frau"
+									checked="checked" tabindex="3">Frau
+								</label> <label class="radio-inline"> <input type="radio"
+									class="form-control" id="anrede_herr" name="anrede"
+									value="Herr" tabindex="4"> Herr
+								</label>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="titel" class="control-label col-sm-2">Titel*</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="titel"
+									list="titel_list" maxlength="10" required="required"
+									name="titel" tabindex="5">
+
+								<datalist id="titel_list">
+									<option value="Dr.">
+									<option value="Prof.">
+									<option value="Prof. Dr.">
+									<option value="Dipl.-Ing.">
+									<option value="Dr. h.c.">
+								</datalist>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="vorname" class="control-label col-sm-2">Vorname*</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="vorname"
+									maxlength="20" required="required" name="vorname" tabindex="6">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="nachname" class="control-label col-sm-2">Nachname*</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="nachname"
+									maxlength="40" required="required" name="nachname" tabindex="7">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="adresszusatz" class="control-label col-sm-2">Adresszusatz</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="adresszusatz"
+									maxlength="20" name="adresszusatz" tabindex="8">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="strasse_hnr" class="control-label col-sm-2">Strasse
+								und Hausnummer*</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="strasse_hnr"
+									maxlength="40" required="required" name="strasse" tabindex="9">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="plz" class="control-label col-sm-2">PLZ*</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="plz" maxlength="5"
+									required="required" name="plz" pattern="[0-9]{5}"
+									title="5stellige PLZ eingeben" tabindex="10">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="ort" class="control-label col-sm-2">Ort*</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="ort" maxlength="40"
+									required="required" name="ort" list="ort_list" tabindex="11">
+								<datalist id="ort_list">
+									<option value="Offenburg">
+									<option value="Lahr">
+									<option value="Freiburg">
+									<option value="Karlsruhe">
+									<option value="Rust">
+								</datalist>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="land" class="control-label col-sm-2">Land*</label>
+							<div class="col-sm-10">
+								<select class="form-control" name="land" id="land" tabindex="12">
+									<option value="deutschland" selected="selected">Deutschland</option>
+									<option value="schweiz">Schweiz</option>
+									<option value="oesterreich">Österreich</option>
+									<option value="frankreich">Frankreich</option>
+									<option value="niederlande">Niederlande</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="email" class="control-label col-sm-2">E-Mail-Adresse*</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="email"
+									required="required" name="email"
+									pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" tabindex="13">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="tel" class="control-label col-sm-2">Telefonnummer*</label>
+							<div class="col-sm-10">
+								<input type="tel" class="form-control" id="tel" maxlength="5"
+									required="required" name="tel" tabindex="14">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="gebdat" class="control-label col-sm-2">Geburtsdatum*</label>
+							<div class="col-sm-10">
+								<input type="date" class="form-control" id="gebdat"
+									required="required" name="gebdat" tabindex="15">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="pw1" class="control-label col-sm-2" id="pw1_label">Passwort*
+								<span class="glyphicon glyphicon-ok" id="haken"></span>
+							</label>
+							<div class="col-sm-10">
+								<input type="password" class="form-control" id="pw1"
+									maxlength="20" autocomplete="off" required="required"
+									name="pw1" pattern="[A-Za-z0-9]{3,}"
+									title="Passwort muss min. einen Groß-, einen Kleinbuchstaben und eine Zahl enthalten"
+									tabindex="16" onchange="isSame()">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="pw2" class="control-label col-sm-2" id="pw2_label">Passwort
+								bestätigen*</label>
+							<div class="col-sm-10">
+								<input type="password" class="form-control" id="pw2"
+									maxlength="20" autocomplete="off" required="required"
+									name="pw2" pattern="[A-Za-z0-9]{3,}"
+									title="Passwort muss min. einen Groß-, einen Kleinbuchstaben und eine Zahl enthalten"
+									tabindex="17" onchange="isSame()">
+							</div>
+						</div>
+
+						<div id="checkbox_konto">
+							<label class="checkbox-inline"> <input type="checkbox"
+								name="agb" value="ja" required="required"
+								onclick="submitButton()" > *Ja, ich
+								stimme den <a href="agb.html">AGB's</a> und den <a
+								href="datenschutz.html">Datenschutzrichtlinien</a> zu.
+							</label>
+						</div>
+
+						<div class="form-group" id="buttons_konto">
+							<button class="btn btn-default" type="submit" id="submit_konto">Absenden</button>
+							<button class="btn btn-default" type="reset">Reset</button>
+						</div>
+					</form>
+				</div>
+
+
+			</div>
+		</div>
+		</main>
+		<footer>
+			<nav id="nav3">
+				><a href="impressum.html">Impressum</a> ><a href="agb.html">AGBs</a>
+				><a href="datenschutz.html">Datenschutz</a>
+			</nav>
+		</footer>
+
+	</div>
+	<!-- Ende id wrapper -->
+</body>
+</html>

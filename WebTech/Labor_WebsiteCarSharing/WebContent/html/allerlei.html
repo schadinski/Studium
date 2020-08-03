@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="myCarSharing by Katharina Schwab">
+<meta name="keywords" content="carsharing, rent a car, myCarSharing">
+<meta name="author" content="Katharina Schwab">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- css einbinden -->
+<link rel="stylesheet" href="../css/default.css">
+<!-- canvas einbinden, framework und js-datei mit meiner animation -->
+<script src="http://141.79.64.139/CANHOGFramework/canhog.js"></script>
+<script src="../js/template_canhog.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>myCarSharing</title>
+</head>
+<body onload="initialize('firstCanvas')">
+	<div id="wrapper">
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target="#myNavbar">
+						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html">myCarSharing</a>
+				</div>
+
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul id="nav1" class="nav navbar-nav">
+						<!-- Dropdown -->
+						<li class="dropdown"><a href="ueberUns.html"
+							data-toggle="dropdown" class="dropdown-toggle">Über uns <span
+								class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="ueberUns.html#allgemeines">Allgemeines</a></li>
+								<li><a href="ueberUns.html#leitbild">Leitbild</a></li>
+								<li><a href="ueberUns.html#standorte">Standorte und
+										Flotte</a></li>
+								<li><a href="ueberUns.html#mehrwert">Mehrwert für
+										unsere Kunden</a></li>
+								<li><a href="ueberUns.html#partner">Partner</a></li>
+								<li><a href="ueberUns.html#referenzen">Referenzen</a></li>
+
+								<li><a href="fakten.html">Fakten</a></li>
+
+							</ul></li>
+
+						<li><a href="preise.html">Preise</a></li>
+						<li><a href="reservierung.html">Reservierung</a></li>
+						<li><a href="stellplaetze.html">Stellplätze</a></li>
+						<li><a href="allerlei.html">Allerlei</a></li>
+					</ul>
+
+					<ul id="nav2" class="nav navbar-nav navbar-right">
+						<!--Suchmaske-->
+						<li id="Suche">
+							<form action="http://google.de/search" method="get"
+								target="_blank">
+								<div class="input-group">
+									<input type="text" class="form-control" placeholder="Suche"
+										name="q">
+									<div class="input-group-btn">
+										<button class="btn btn-default" type="submit">
+											<i class="glyphicon glyphicon-search"></i>
+										</button>
+									</div>
+								</div>
+							</form>
+						</li>
+						<!--mein Konto, Anmeldemaske	-->
+						<li><a href="konto.html"><span
+								class="glyphicon glyphicon-user" aria-hidden="true"> </span>
+								mein Konto</a></li>
+						<li><a href="kontakt.html"> <span
+								class="glyphicon glyphicon-envelope" aria-hidden="true">
+							</span> Kontakt
+						</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<header id="logo">
+			<div class="container">
+				<div class="jumbotron">
+					<img src="../images/logo.png" alt="Logo">
+				</div>
+			</div>
+		</header>
+
+		<main>
+		<div class="container">
+			<div class="jumbotron">
+
+				<div class=container id="grid">
+					<!-- IFrame -->
+					<iframe id="MyiFrame" name="MyiFrame"></iframe>
+					<!--article für das Örtliche-->
+					<article>
+						<section id="Text1">
+							<h4>Das Örtliche</h4>
+							Finden Sie Personen oder Firmen und ihre Adressen schnell und
+							einfach auf unserer Seite.
+						</section>
+						<section>
+							<form class="form-inline" action="http://dasoertliche.de/"
+								method="get" target="MyiFrame">
+								<div class="form-group">
+									<label for="name_oertliche" id="Label1">Name</label> <input
+										type="text" class="form-control" id="name_oertliche"
+										placeholder="Name" name="kw">
+								</div>
+
+								<div class="form-group">
+
+									<label for="ort_oertliche">Ort/PLZ</label> <input type="text"
+										class="form-control" id="ort_oertliche"
+										placeholder="PLZ oder Ort" name="ci">
+
+								</div>
+
+
+								<button class="btn btn-default" type="submit">
+									<i class="glyphicon glyphicon-search"></i> Finden
+								</button>
+
+							</form>
+						</section>
+					</article>
+					<!-- article für leo.org -->
+					<article>
+						<section>
+							<h4>Leo Dictionary</h4>
+							Übersetzen Sie mittels des Leo Dictionary schnell vom Englischen
+							ins Deutsche.
+						</section>
+						<section>
+							<form class="form-inline" action="http://dict.leo.org/"
+								method="get" target="MyiFrame">
+								<div class="form-group">
+									<label for="leo_org">englisches Wort</label> <input type="text"
+										class="form-control" id="leo_org" name="search">
+
+								</div>
+								<button class="btn btn-default" type="submit">
+									<i class="glyphicon glyphicon-search"></i> Finden
+								</button>
+
+
+							</form>
+						</section>
+					</article>
+					<!-- article für bahn.de -->
+					<article>
+						<section>
+							<h4>Die Bahn</h4>
+							Sie möchten Ihre Reise mit der Bahn fortsetzen? Kein Problem,
+							finden Sie gleich hier Ihre Verbindung.
+						</section>
+						<section>
+							<form class="form-inline"
+								action="https://rabdc.bahn.de/bin/query.exe/dn" method="get"
+								target="MyiFrame" id="bahn">
+								<div class="form-group">
+									<label for="bahn_start">Start-/Zielbahnhof</label> <input
+										list="bahnhoefe" type="text" class="form-control"
+										id="bahn_start" name="S"> <input list="bahnhoefe"
+										type="text" class="form-control" id="bahn_ziel" name="Z">
+									<datalist id="bahnhoefe">
+										<option value="Offenburg">
+										<option value="Freiburg">
+										<option value="Mannheim">
+										<option value="Lahr">
+										<option value="Karlsruhe">
+									</datalist>
+								</div>
+
+								<br>
+								<div class="form-group">
+									<label for="bahn_zeit">Abfahrtszeit</label> <input type="text"
+										class="form-control" id="bahn_zeit" name="time"
+										placeholder="hh.mm">
+								</div>
+								<br>
+								<div class="form-group">
+									<label for="bahn_datum">Reisedatum</label> <input type="text"
+										class="form-control" id="bahn_datum" name="date"
+										placeholder="dd.mm.yyyy">
+								</div>
+
+								<div class="input-group-btn">
+									<button class="btn btn-default" type="submit">
+										<i class="glyphicon glyphicon-search"></i> Finden
+									</button>
+								</div>
+
+							</form>
+						</section>
+					</article>
+					<!-- canvas animation -->
+					<article>
+						<canvas id="firstCanvas" width="945" height="600"></canvas>
+					</article>
+				</div>
+			</div>
+		</div>
+	</div>
+	</main>
+	<footer>
+		<nav id="nav3">
+			><a href="impressum.html">Impressum</a> ><a href="agb.html">AGBs</a>
+			><a href="datenschutz.html">Datenschutz</a>
+		</nav>
+	</footer>
+
+	<!-- Ende id wrapper -->
+</body>
+</html>

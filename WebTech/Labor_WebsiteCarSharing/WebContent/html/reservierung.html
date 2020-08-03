@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="myCarSharing by Katharina Schwab">
+<meta name="keywords" content="carsharing, rent a car, myCarSharing">
+<meta name="author" content="Katharina Schwab">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- css einbinden -->
+<link rel="stylesheet" href="../css/default.css">
+<!-- javascript einbinden -->
+<script src="../js/reservierung.js"></script>
+<script src="../js/reservierungen.js"></script>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>myCarSharing</title>
+</head>
+<body onload="initialize(), showReservierungen()">
+	<div id="wrapper">
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target="#myNavbar">
+						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html">myCarSharing</a>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul id="nav1" class="nav navbar-nav">
+						<!-- Dropdown -->
+						<li class="dropdown"><a href="ueberUns.html"
+							data-toggle="dropdown" class="dropdown-toggle">Über uns <span
+								class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="ueberUns.html#allgemeines">Allgemeines</a></li>
+								<li><a href="ueberUns.html#leitbild">Leitbild</a></li>
+								<li><a href="ueberUns.html#standorte">Standorte und
+										Flotte</a></li>
+								<li><a href="ueberUns.html#mehrwert">Mehrwert für
+										unsere Kunden</a></li>
+								<li><a href="ueberUns.html#partner">Partner</a></li>
+								<li><a href="ueberUns.html#referenzen">Referenzen</a></li>
+
+								<li><a href="fakten.html">Fakten</a></li>
+
+							</ul></li>
+
+						<li><a href="preise.html">Preise</a></li>
+						<li><a href="reservierung.html">Reservierung</a></li>
+						<li><a href="stellplaetze.html">Stellplätze</a></li>
+						<li><a href="allerlei.html">Allerlei</a></li>
+					</ul>
+
+					<ul id="nav2" class="nav navbar-nav navbar-right">
+						<!--Suchmaske-->
+						<li id="Suche">
+							<form action="http://google.de/search" method="get"
+								target="_blank">
+								<div class="input-group">
+									<input type="text" class="form-control" placeholder="Suche"
+										name="q">
+									<div class="input-group-btn">
+										<button class="btn btn-default" type="submit">
+											<i class="glyphicon glyphicon-search"></i>
+										</button>
+									</div>
+								</div>
+							</form>
+						</li>
+						<!--mein Konto, Anmeldemaske	-->
+						<li><a href="konto.html"><span
+								class="glyphicon glyphicon-user" aria-hidden="true"> </span>
+								mein Konto</a></li>
+						<li><a href="kontakt.html"> <span
+								class="glyphicon glyphicon-envelope" aria-hidden="true">
+							</span> Kontakt
+						</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<header id="logo">
+			<div class="container">
+				<div class="jumbotron">
+					<img src="../images/logo.png" alt="Logo">
+				</div>
+			</div>
+		</header>
+
+		<main>
+		<div class="container">
+			<div class="jumbotron">
+
+				<div class="panel panel-default panel_konto">
+					<div class="panel-heading">
+						<h3>Reservierung</h3>
+					</div>
+
+					<div id="myTable_res">
+						<h4>Meine Reservierungen</h4>
+						<table id="reservierungen_table"
+							class="table table-striped table-bordered table-condensed">
+							<thead>
+								<tr>
+									<th>Beginn</th>
+									<th>Ende</th>
+									<th>Kennzeichen</th>
+									<th>Bereitstellungort</th>
+									<th>Preis</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr id="line1">
+								</tr>
+								<tr id="line2">
+								</tr>
+								<tr id="line3">
+								</tr>
+								<tr id="line4">
+								</tr>
+								<tr id="line5">
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="panel-body">
+						<h4>Neue Reservierung</h4>
+						<form class="form-horizontal form_konto"
+							action="http://141.79.64.139/cstippek/FormCheck.php" method="get"
+							autocomplete="on" onsubmit="isValid()">
+							<div class="form-group">
+								<label for="antrieb" class="control-label col-sm-2">Antrieb*</label>
+								<div class="col-sm-10">
+									<label class="radio-inline"> <input type="radio"
+										class="form-control" id="antrieb" name="antrieb"
+										value="Elektro" autofocus="autofocus" tabindex="1">Elektro
+									</label> <label class="radio-inline"> <input type="radio"
+										class="form-control" name="antrieb" value="Diesel"
+										tabindex="2"> Diesel
+									</label> <label class="radio-inline"> <input type="radio"
+										class="form-control" name="antrieb" value="Benzin"
+										tabindex="3"> Benzin
+									</label> <label class="radio-inline"> <input type="radio"
+										class="form-control" name="antrieb" value="Gas" tabindex="4">
+										Gas
+									</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="autotyp" class="control-label col-sm-2">Fahrzeugtyp*</label>
+								<div class="col-sm-10">
+									<select name="autotyp" id="autotyp" required="required"
+										multiple="multiple" tabindex="5">
+										<option value="lkw">LKW</option>
+										<option value="groß">groß</option>
+										<option value="mittel">mittel</option>
+										<option value="klein">klein</option>
+										<option value="transport">Transport</option>
+										<option value="familie">Familie</option>
+										<option value="spass">Spass</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="mietbeginn_tag" class="control-label col-sm-2">Mietbeginn<br>(Tag
+									und Zeit)*
+								</label>
+								<div class="col-sm-10">
+									<input type="date" class="form-control" id="mietbeginn_tag"
+										required="required" name="miete_starttag" tabindex="6"
+										onchange="compareAndSwitch()" onsubmit="compareAndSwitch()">
+									<input type="time" class="form-control" id="mietbeginn_zeit"
+										required="required" name="miete_startzeit" tabindex="7">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="mietende_tag" class="control-label col-sm-2">Mietende<br>(Tag
+									und Zeit)*
+								</label>
+								<div class="col-sm-10">
+									<input type="date" class="form-control" id="mietende_tag"
+										required="required" name="miete_endtag" tabindex="8"
+										onchange="compareAndSwitch()" onsubmit="compareAndSwitch()">
+									<input type="time" class="form-control" id="mietende_zeit"
+										required="required" name="miete_endzeit" tabindex="9">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="km" class="control-label col-sm-2">geschätzte
+									Fahrkilometer*</label>
+								<div class="col-sm-10">
+									<input type="number" class="form-control" id="km"
+										required="required" name="km_gesch" min="1" tabindex="10">
+								</div>
+							</div>
+
+							<label class="control-label col-sm-2">Wählen Sie einen
+								Standort</label>
+							<div class="col-sm-10">
+								<img alt="Karte von Offenburg"
+									src="../images/CarSharingOffenburg_Plaetze.jpg" usemap="#karte"
+									id="map_reservierung">
+								<map name="karte">
+									<!-- href mit leerem String eingefügt um error beim check zu verhindern -->
+									<area title="Hauptstr.2" shape="rect" coords="0,0,200,407"
+										alt="Karte von Offenburg" onclick="setReadOnlyField(0)"
+										href="">
+									<area title="Rheinst.15" shape="rect" coords="200,0,400,407"
+										alt="Karte von Offenburg" onclick="setReadOnlyField(1)"
+										href="">
+									<area title="Winkelgasse 13" shape="rect"
+										coords="400,0,591,407" alt="Karte von Offenburg"
+										onclick="setReadOnlyField(2)" href="">
+									<!-- 										onmouseover="showReadOnlyField(2)" -->
+									<!-- 										onmouseout="showReadOnlyField(3)" -->
+
+								</map>
+							</div>
+
+							<div class="form-group">
+								<label for="bereitstellungsort" class="control-label col-sm-2">Bereitstellungsort</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="bereitstellungsort"
+										name="bereitstellungort" readonly="readonly">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="pay" class="control-label col-sm-2">Bezahloptionen*</label>
+								<div class="col-sm-10">
+									<select class="form-control" name="pay" id="pay"
+										required="required" size="3" tabindex="11"
+										onchange="hideBillOrCard()">
+										<option value="rechnung" selected="selected">Rechnung</option>
+										<option value="visa">Visa</option>
+										<option value="mastercard">MasterCard</option>
+									</select>
+								</div>
+							</div>
+
+							<!-- Container Rechnung -->
+							<fieldset id="payWithBill">
+								<fieldset id="billChoise">
+									<div class="form-group">
+										<label for="rechnung_adr" class="control-label col-sm-2">Rechnungsadresse*</label>
+										<div class="col-sm-10">
+											<label class="radio-inline"> <input type="radio"
+												class="form-control" id="rechnung_adr" name="rechnung_adr"
+												value="rechnung_liefer" checked="checked"
+												onchange="hideAddress()"> Rechnungsadresse gleich
+												Lieferadresse
+											</label> <label class="radio-inline"> <input type="radio"
+												class="form-control" id="rechnung_abweich"
+												name="rechnung_adr" value="rechnung_abweich"
+												onchange="hideAddress()"> Abweichende
+												Rechnungsadresse
+											</label>
+										</div>
+									</div>
+								</fieldset>
+
+								<!-- abweichende Adresse-->
+								<fieldset id="anotherAdr">
+									<div class="form-group">
+										<label for="anrede" class="control-label col-sm-2">Anrede*</label>
+										<div class="col-sm-10">
+											<label class="radio-inline"> <input type="radio"
+												class="form-control" id="anrede" name="anrede" value="Frau"
+												checked="checked">Frau
+											</label> <label class="radio-inline"> <input type="radio"
+												class="form-control" id="anrede_herr" name="anrede"
+												value="Herr"> Herr
+											</label>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label for="titel" class="control-label col-sm-2">Titel*</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" id="titel"
+												list="titel_list" maxlength="10" required="required"
+												name="titel">
+
+											<datalist id="titel_list">
+												<option value="Dr.">
+												<option value="Prof.">
+												<option value="Prof. Dr.">
+												<option value="Dipl.-Ing.">
+												<option value="Dr. h.c.">
+											</datalist>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label for="vorname" class="control-label col-sm-2">Vorname*</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" id="vorname"
+												maxlength="20" required="required" name="vorname">
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label for="nachname" class="control-label col-sm-2">Nachname*</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" id="nachname"
+												maxlength="40" required="required" name="nachname">
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label for="adresszusatz" class="control-label col-sm-2">Adresszusatz</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" id="adresszusatz"
+												maxlength="20" name="adresszusatz">
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label for="strasse_hnr" class="control-label col-sm-2">Strasse
+											und Hausnummer*</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" id="strasse_hnr"
+												maxlength="40" required="required" name="strasse">
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label for="plz" class="control-label col-sm-2">PLZ*</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" id="plz"
+												maxlength="5" required="required" name="plz"
+												pattern="[0-9]{5}" title="5stellige PLZ eingeben">
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label for="ort" class="control-label col-sm-2">Ort*</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" id="ort"
+												maxlength="40" required="required" name="ort"
+												list="ort_list">
+											<datalist id="ort_list">
+												<option value="Offenburg">
+												<option value="Lahr">
+												<option value="Freiburg">
+												<option value="Karlsruhe">
+												<option value="Rust">
+											</datalist>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label for="land" class="control-label col-sm-2">Land*</label>
+										<div class="col-sm-10">
+											<select class="form-control" name="land" id="land">
+												<option value="deutschland" selected="selected">Deutschland</option>
+												<option value="schweiz">Schweiz</option>
+												<option value="oesterreich">Österreich</option>
+												<option value="frankreich">Frankreich</option>
+												<option value="niederlande">Niederlande</option>
+											</select>
+										</div>
+									</div>
+								</fieldset>
+								<!-- ende abweichende Adresse -->
+							</fieldset>
+							<!-- Ende Container Rechnung -->
+
+							<!-- container karte-->
+							<fieldset id="payWithCard">
+								<div class="form-group">
+									<label for="name" class="control-label col-sm-2">Vor-
+										und Nachname*</label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control" id="name"
+											maxlength="100" required="required" name="name">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="kartennr" class="control-label col-sm-2">Kreditkartennummer*</label>
+									<div class="col-sm-10">
+										<input type="number" class="form-control" id="kartennr"
+											required="required" name="kartennr" min="1">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="pruefziffer" class="control-label col-sm-2">Prüfziffer*</label>
+									<div class="col-sm-10">
+										<input type="number" class="form-control" id="pruefziffer"
+											required="required" name="pruefziffer" min="1" max="999">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="gueltig_month" class="control-label col-sm-2">Gültig
+										bis*<br>(Monat und Jahr)
+									</label>
+									<!-- 							<div class="col-sm-10"> -->
+									<!-- 							<input  -->
+									<!-- 									type="month" class="form-control" id="gueltig" required="required" name="gueltig_monat" -->
+									<!-- 									min="1910-01" max="1997-01" step="1" > -->
+									<!-- 							</div> -->
+
+									<div class="col-sm-5">
+										<input type="number" class="form-control" id="gueltig_month"
+											required="required" name="gueltig_monat" min="1" max="12"
+											step="1" placeholder="Monat">
+									</div>
+									<div class="col-sm-5">
+										<input type="number" class="form-control" required="required"
+											name="gueltig_jahr" id="gueltig_year" max="2030" step="1"
+											placeholder="Jahr">
+									</div>
+								</div>
+							</fieldset>
+							<div class="form-group" id="button_reservierung">
+								<button class="btn btn-default" type="submit">Absenden
+								</button>
+								<button class="btn btn-default" type="reset"
+									onclick="initialize()">Reset</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		</main>
+		<footer>
+			<nav id="nav3">
+				><a href="impressum.html">Impressum</a> ><a href="agb.html">AGBs</a>
+				><a href="datenschutz.html">Datenschutz</a>
+			</nav>
+		</footer>
+
+	</div>
+	<!-- Ende id wrapper -->
+</body>
+</html>

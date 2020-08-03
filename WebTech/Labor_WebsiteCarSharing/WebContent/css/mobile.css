@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+@media ( orientation :portrait) {
+	.jumbotron>img {
+		animation: none;
+	}
+	#one {
+		display: none;
+	}
+	#two {
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+	}
+	#AdT {
+		width: 100%;
+		height: 50% line-height: 0.8;
+	}
+	#three {
+		display: none;
+	}
+	#flexbox-main {
+		flex-direction: column;
+	}
+	article img {
+		width: 90%;
+		height: 30%;
+		margin: 10px 20px 10px 10px;
+	}
+	article#articleTwo {
+		padding-bottom: 70px;
+	}
+	article#Termine {
+		margin-top: 10px;
+	}
+}
+
+@media screen and (orientation:landscape) and (max-device-width:480px) {
+	.jumbotron>img {
+		animation: none;
+	}
+	#flexbox {
+		flex-direction: column;
+	}
+	#one {
+		margin-top: 400px;
+	}
+	#two {
+		width: 100%;
+	}
+	#three {
+		width: 100%;
+	}
+	#flexbox-main {
+		padding-top: 450px;
+		flex-direction: column;
+	}
+	#articleTwo {
+		padding-bottom: 70px;
+	}
+	#articleTwo img {
+		width: 35%;
+	}
+	.jumbotron#flexbox {
+		flex-direction: column;
+	}
+	#one {
+		height: 200px;
+		width: 100%;
+	}
+	#two {
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+	}
+	#AdT {
+		width: 100%;
+		height: 50% line-height: 0.8;
+	}
+	#three>img+map {
+		width: 30%;
+		height: 100%;
+	}
+}
+
+/*and (orientation:portrait) and (orientation:landscape)*/
+
+/*@media screen and (width:320px) and (height: 480px)  {
+
+
+	
+	
+	
+	
+	}*/

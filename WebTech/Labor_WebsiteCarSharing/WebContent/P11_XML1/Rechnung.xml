@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE electricity_bill [
+	<!ELEMENT company (name, street, city, phone, fax, mail, website, for_ask)>
+	<!ELEMENT name				(#PCDATA)>
+	<!ELEMENT street			(#PCDATA)>
+	<!ELEMENT city				(#PCDATA)>
+	<!ELEMENT phone				(#PCDATA)>
+	<!ELEMENT fax				(#PCDATA)>
+	<!ELEMENT mail				(#PCDATA)>
+	<!ELEMENT website			(#PCDATA)>
+	<!ELEMENT for_ask			(special_mail, special_phone)>
+	<!ELEMENT spezial_mail		(#PCDATA)>
+	<!ELEMENT spezial_phone		(#PCDATA)>
+	
+	<!ELEMENT client_data()>
+	
+	<!ELEMENT price()>
+	
+	<!ELEMENT use_discovery()>
+	
+	<!ELEMENT use_invoice()>
+	
+]>

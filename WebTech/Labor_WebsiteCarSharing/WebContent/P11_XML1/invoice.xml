@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE invoice-list[
+	<!ELEMENT company 			(id, name, street, city, phone)>
+	<!ELEMENT id 				(#PCDATA)>
+	<!ELEMENT name				(#PCDATA)>
+	<!ELEMENT street			(#PCDATA)>
+	<!ELEMENT city				(#PCDATA)>
+	<!ELEMENT phone				(#PCDATA)>
+	
+	<!ELEMENT invoice			(credit, number, date, currency, total-price)>
+	<!ELEMENT credit			(#PCDATA)>
+	<!ELEMENT number			(#PCDATA)>
+	<!ELEMENT date				(#PCDATA)>	
+	<!ELEMENT currency			(#PCDATA)>
+	<!ELEMENT total-price		(#PCDATA)>
+	
+	<!ELEMENT invoice-line		(supplier-product, product-desc, qty-ordered, unit-of-measure, qty-of-delivery, line-price)+>
+	<!ELEMENT supplier-product	(#PCDATA)>
+	<!ELEMENT product-desc		(#PCDATA)>
+	<!ELEMENT qty-ordered		(#PCDATA)>
+	<!ELEMENT unit-of-measure	(#PCDATA)>
+	<!ELEMENT qty-of-delivery	(#PCDATA)>
+	<!ELEMENT line-price		(#PCDATA)>	
+]>
+
+<invoices partner="XYZ" transaction="INVOICE" version="1.40" timestamp="2006-03-21T00:18:42">
+  <invoicelist>
+  		<company>
+  			<id>10143877</id>
+  			<name>ABC Churchill Dr 507</name>
+  			<street>Churchill Drive</street>
+  			<city>Wellington</city>
+  			<phone>04 4792133</phone>			
+  		</company>
+  		<invoice>
+  			<credit>Tax Invoice</credit>
+  			<number>7201091576</number>
+  			<date>2005-05-05</date>
+  			<currency>NZD</currency>
+  			<total-price>38.33</total-price>
+  		</invoice>
+		<invoice-line>
+	  		<supplier-product>9310012027454</supplier-product>
+	  		<product-desc>MFS RBS Bf Strognf 8x175g Pou</product-desc>
+	  		<qty-ordered>2</qty-ordered>
+	  		<unit-of-measure>kg</unit-of-measure>
+	  		<qty-of-delivery>2</qty-of-delivery>
+	  		<line-price>27.70</line-price>		
+  		</invoice-line>
+  		<invoice-line>
+	  		<supplier-product>9310012022381</supplier-product>
+	  		<product-desc>MFS H&amp;S Ms Pwdr 6x50g Box</product-desc>
+	  		<qty-ordered>2</qty-ordered>
+	  		<unit-of-measure>kg</unit-of-measure>
+	  		<qty-of-delivery>2</qty-of-delivery>
+	  		<line-price>27.70</line-price>		
+  		</invoice-line>
+  </invoicelist>
+ </invoices>
+ 

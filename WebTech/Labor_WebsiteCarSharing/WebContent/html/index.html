@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="myCarSharing by Katharina Schwab">
+<meta name="keywords" content="carsharing, rent a car, myCarSharing">
+<meta name="author" content="Katharina Schwab">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/fontawesome.min.css">
+<!-- css einbinden -->
+<link rel="stylesheet" href="../css/default.css">
+<link rel="stylesheet" href="../css/index.css">
+<link rel="stylesheet" href="../css/mobile.css">
+<script src="../js/index.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>myCarSharing</title>
+</head>
+<body onload="initialize()">
+	<div id="wrapper">
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target="#myNavbar">
+						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html">myCarSharing</a>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul id="nav1" class="nav navbar-nav">
+						<!-- Dropdown -->
+						<li class="dropdown"><a href="ueberUns.html"
+							data-toggle="dropdown" class="dropdown-toggle">Über uns <span
+								class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="ueberUns.html#allgemeines">Allgemeines</a></li>
+								<li><a href="ueberUns.html#leitbild">Leitbild</a></li>
+								<li><a href="ueberUns.html#standorte">Standorte und
+										Flotte</a></li>
+								<li><a href="ueberUns.html#mehrwert">Mehrwert für
+										unsere Kunden</a></li>
+								<li><a href="ueberUns.html#partner">Partner</a></li>
+								<li><a href="ueberUns.html#referenzen">Referenzen</a></li>
+
+								<li><a href="fakten.html">Fakten</a></li>
+
+							</ul></li>
+
+						<li><a href="preise.html">Preise</a></li>
+						<li><a href="reservierung.html">Reservierung</a></li>
+						<li><a href="stellplaetze.html">Stellplätze</a></li>
+						<li><a href="allerlei.html">Allerlei</a></li>
+					</ul>
+
+					<ul id="nav2" class="nav navbar-nav navbar-right">
+						<!--Suchmaske-->
+						<li id="Suche">
+							<form action="http://google.de/search" method="get"
+								target="_blank">
+								<div class="input-group">
+									<input type="text" class="form-control" placeholder="Suche"
+										name="q">
+									<div class="input-group-btn">
+										<button class="btn btn-default" type="submit">
+											<i class="glyphicon glyphicon-search"></i>
+										</button>
+									</div>
+								</div>
+							</form>
+						</li>
+						<!--mein Konto, Anmeldemaske	-->
+						<li><a href="konto.html"><span
+								class="glyphicon glyphicon-user" aria-hidden="true"> </span>
+								mein Konto</a></li>
+						<li><a href="kontakt.html"> <span
+								class="glyphicon glyphicon-envelope" aria-hidden="true">
+							</span> Kontakt
+						</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<header id="logo">
+			<div class="container">
+				<div class="jumbotron">
+					<img src="../images/logo.png" alt="Logo">
+				</div>
+			</div>
+		</header>
+
+		<main >
+		<div class="container">
+			<div class="jumbotron">
+				<!-- hierein komt der eigentliche Inhalt -->
+
+				<div id="flexbox">
+					<div id="indexVideo">
+						<div class myButton>
+							<button class="btn btn-default" onclick="startButton()">
+								Starte Film</button>
+							<button class="btn btn-default" onclick="stopButton()">
+								Stoppe Film</button>
+						</div>
+						<video id="one" controls="controls" preload="auto" muted="muted">
+							<source
+								src="http://141.79.64.139/public/Videos/AudiA4Werbung1995-YouTube.mp4"
+								type="video/mp4">
+							Try another browser
+						</video>
+					</div>
+
+					<div id="two">
+						<h2 id="AdT">Auto des Tages</h2>
+
+						<img alt="Unser Auto des Tages" src="../images/auto_des_tages.jpg">
+					</div>
+
+					<div id="three">
+						<img alt="Karte von Offenburg"
+							src="../images/CarSharingOffenburg_Plaetze.jpg" usemap="#karte">
+						<map name="karte">
+							<!-- Karte, verweissensitiv, immer auf stellplaetze.html -->
+							<area title="Hauptstr.2" shape="rect" coords="0,0,100,150"
+								alt="Karte von Offenburg" href="stellplaetze.html">
+							<area title="Rheinst.15" shape="rect" coords="100,0,200,150"
+								alt="Karte von Offenburg" href="stellplaetze.html">
+							<area title="Winkelgasse 13" shape="rect" coords="200,0,300,150"
+								alt="Karte von Offenburg" href="stellplaetze.html">
+						</map>
+					</div>
+				</div>
+
+				<div id="flexbox-main">
+					<div id="News">
+						<article>
+							<h4>Unsere Flotte wächst</h4>
+							Zu Beginn des kommenden Jahres werden wir unsere Flotte für Sie
+							erweitern. Aufgrund der großen Nachfrage und des immer weiter
+							wachsenden Kundenstammes ist es dafür an der Zeit. Wir werden 3
+							weitere E-Autos anschaffen und damit unsere Umweltfreundlichkeit
+							weiter ausbauen. Des weiteren werden wir 2 Sportwagen-Cabrios
+							kaufen, um auch für schöne Wochenendausflüge ausgestattet zu
+							sein.<br> Auch unser Angebot an Transporten und Kleinwagen
+							werden wir jeweils um 2 Autos erweitern.
+						</article>
+						<article id="articleTwo">
+							<h4>Best Place to Work</h4>
+							<img alt="Ein guter Grund zum Feiern!" src="../images/feiern.jpg">
+							Wir wurden nun zum zweiten mal in Folge mit dem Best place to
+							work-Preis ausgezeichnet. Natürlich freuen wir uns sehr darüber
+							und danken unseren Mitarbeitern, die für die Auszeichnung befragt
+							wurden. Dieser Preis wird jährlich von der IG Handel vergeben und
+							zeichnet Arbeitgeber aus, die ihren Arbeitnehmern bestimmte
+							social benefits erbringen und die für ein gutes Arbeitsklima
+							sorgen. Der Preis ist in verschiedene Kategorien unterteilt. Wir
+							haben insbesondere in den kategorien Bertriebsklima und
+							Weiterbildung sehr gut abgeschnitten.
+						</article>
+						<article id="Termine">
+							<h4>Termine</h4>
+							<ul>
+								<li>28.12.2016 Tag der offenen Tür</li>
+								<li>31.01.2017 Ankunft unserer neuen Flottenautos</li>
+								<li>04.05.2017 Firmenfeier</li>
+								<li>30.06.2017 Sommerfest in der Haid</li>
+							</ul>
+						</article>
+						<article>
+							<h4>Mitarbeiter gesucht</h4>
+							Zur Verstärkung unseres Teams suchen wir zum sofortigen Eintritt
+							eine/n Bürokauffrau/mann. Idealerweise mit einer Gewissen Neigung
+							zu Autos, da eine Position in der Abteilung Flottenverwaltung
+							besetzt werden soll. Das Tätigkeitsfeld umfasst unter anderem
+							auch die Betreuung der Flotte, sowie das Überwachen der korrekten
+							Funktionsweise unserer Autos und gegebenfalls das Vereinbaren von
+							Werkstattterminen sowie die Beschaffung eines Ersatzwagens für
+							die Flotte in der Reparaturzeit.
+						</article>
+					</div>
+
+					<div id="links-main">
+						<a href="http://www.carsharing.de">Dachverband<br>Carsharing
+						</a>
+
+						<!--Facebook-->
+						<button type="button" class="btn btn-fb">
+							<i class="fa fa-facebook left"></i> Facebook
+						</button>
+						<!--Twitter-->
+						<button type="button" class="btn btn-tw">
+							<i class="fa fa-twitter left"></i> Twitter
+						</button>
+						<!--Google +-->
+						<button type="button" class="btn btn-gplus">
+							<i class="fa fa-google-plus left"></i> Google +
+						</button>
+
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+		</main>
+		<footer>
+			<nav id="nav3">
+				><a href="impressum.html">Impressum</a> ><a href="agb.html">AGBs</a>
+				><a href="datenschutz.html">Datenschutz</a>
+			</nav>
+		</footer>
+
+	</div>
+	<!-- Ende id wrapper -->
+</body>
+</html>

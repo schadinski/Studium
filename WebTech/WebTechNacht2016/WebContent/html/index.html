@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+<meta charset="UTF-8">
+<meta name="description"
+	content="project_web_tec_nacht_2016 by Katharina Schwab">
+<meta name="keywords" content="webTecNacht canvas">
+<meta name="author" content="Katharina Schwab">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="../js/canhog.js"></script>
+<script src="../js/webTechNacht_template.js"></script>
+<!-- css einbinden  http://141.79.64.139/CANHOGFramework   -->
+<link rel="stylesheet" href="../css/default.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>Canvas fuer WebTecNacht</title>
+</head>
+
+<!-- onload="initialize('firstCanvas')-->
+<body onload="initialize('firstCanvas')">
+	<header>
+		<div class="container">
+			<div class="jumbotron">
+				<h2>Web Tec Nacht 2016</h2>
+				<br>Katharina Schwab
+			</div>
+		</div>
+	</header>
+	<main>
+	<div class="container">
+		<div class="jumbotron">
+			<p>
+				In diesem Projekt liegt der Schwerpunkt auf dem Umgang mit Canvas
+				als multimedialer Leinwand. Es soll eine Animation erstellt werden,
+				auf die der User mindestens 2 Möglichkeiten der Einflussnahme hat.
+				Des weiteren sollen dynamische und statische Objekte verwendet
+				werden. <br> Dies wird hier mittels einer Feuerwehranimation
+				umgesetzt, die es ermöglicht selbst zu bestimmen, welche Brände
+				gelöscht werden sollen. Auch die Geschwindigkeit des umherfahrenden
+				Feuerwehrautos kann mittels Eingabe bestimmt werden. Der User hat
+				die Möglichkeit zwischen einer Animation bei Tag und einer bei Nacht
+				zu wählen.
+				Wird auf ein Haus geklickt beginnt der Löschvorgang. Wenn offt genug geklickt wird, erlischt das Feuer in diesem Haus.
+			</p>
+		</div>
+	</div>
+	<div class="container">
+			<canvas id="firstCanvas" width="1045" height="600"></canvas>
+	</div>
+
+	<div class="container">
+		<div class="jumbotron">
+
+			
+				<!-- <form class="form-horizontal form_konto">action="http://141.79.64.139/cstippek/FormCheck.php" method="get"
+				autocomplete="on" onsubmit="isValid()" -->
+
+				<div class="form-group">
+					<label for="dayNight" class="control-label col-sm-2">Tageszeit</label>
+					<div class="col-sm-4">
+						<label class="radio-inline"> <input type="radio"
+							id="day" value="day" tabindex="1" checked="checked"
+							name="dayNight">Tag
+						</label>
+						<!--  name="antrieb" class="form-control"-->
+						<label class="radio-inline"> <input type="radio"
+							value="night" id="night" tabindex="2" name="dayNight"> Nacht
+						</label>
+						<!-- class="form-control" name="antrieb" <div class = "col-sm-6"></div> -->
+					</div>
+
+				</div>
+
+				<!--  <div class="form-group">-->
+					<label for="nr" class="control-label col-sm-2">Wie schnell
+						soll das Feuerwehrauto fahren?</label>
+					<div class="col-sm-4">
+						<input type="number" id="nr" min="1" max="10" tabindex="3"
+							required="required">
+						<!-- required="required" name="km_gesch" class="form-control" -->
+					</div>
+				
+
+				<!-- onclick = "setSpeed()" -->
+				<button id="myButton" class="btn btn-default" onclick="start()">Start</button>
+
+
+		</div>
+	</div>
+	</main>
+</body>
+</html>

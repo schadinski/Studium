@@ -1,0 +1,147 @@
+@charset "UTF-8";
+
+@media screen {
+	body {
+		background-color: #87CEEB;
+	}
+	.container-fluid {
+		background-color: #fff1bb;
+	}
+	#Suche {
+		margin-top: 10px;
+	}
+	.jumbotron {
+		background-color: #fff1bb;
+		text-align: left;
+	}
+	#logo {
+		animation: mymove;
+		animation-duration: 10s;
+	}
+	/*zum ändern der jumbotron im header, leider soll sich aber laut aufgabe der ganze header hintergrund ändern, nicht nur die box :-( */
+	/*#logo .jumbotron{
+	animation: mymove;
+	animation-duration: 10s;
+}*/
+	.jumbotron>img {
+		width: 150px;
+		height: 150px;
+		transition: width 2s, height 2s;
+		animation-name: moveAcross;
+		animation-duration: 3s;
+		animation-delay: 1s;
+		text-align: center;
+	}
+	.jumbotron>img:hover {
+		width: 25%;
+		height: 25%;
+	}
+}
+
+#nav3 {
+	background-color: #fff1bb;
+}
+
+@
+-webkit-keyframes mymove {from { background-color:#fff1bb;
+	
+}
+
+to {
+	background-color: #87CEEB;
+}
+
+}
+/*Animation des LOgos, kullert über den Screen*/
+@
+-webkit-keyframes moveAcross {
+	from {transform: translateX(0) rotate(0deg;
+	)
+}
+
+to {
+	transform: translateX(400px) rotate(720deg);
+}
+
+}
+article {
+	margin: 10px 10px 10px 10px;
+	padding: 10px 10px 10px 10px;
+	border-radius: 5px;
+	border-color: #808080;
+	border-style: solid;
+	text-align: justify;
+}
+
+/*IFrame n allerlei.html*/
+#MyiFrame {
+	height: 400px;
+	width: 98%;
+	margin: 10px 10px 10px 10px;
+	padding: 10px 10px 10px 10px;
+	background-color: #fff1bb;
+	border-radius: 5px;
+	border-color: #808080;
+	border-style: solid;
+}
+
+#bahn {
+	display: grid;
+}
+
+#panel_konto {
+	background-color: #fff1bb;
+	border-radius: 5px;
+	border-color: #808080;
+	border-style: solid;
+}
+
+#buttons_konto {
+	text-align: center;
+}
+
+#checkbox_konto {
+	text-align: center;
+}
+
+.panel_konto {
+	background-color: #fff1bb;
+}
+
+.form_konto {
+	padding-top: 15px;
+}
+
+#map_reservierung {
+	padding-bottom: 15px;
+}
+
+#button_reservierung {
+	padding-top: 15px;
+	text-align: center;
+}
+
+#myMap{
+	height: 500px;
+	width: inherit;
+	}
+
+/*CSS für Ausdrucke*/
+@media print {
+	* {
+		font-family: "Times New Roman", Times, serif;
+	}
+	.container-fluid {
+		display: none;
+	}
+	#logo>img {
+		width: 150px;
+		height: 150px;
+		text-align: center;
+	}
+	footer {
+		display: none;
+	}
+}
+@import
+'mobile.css'

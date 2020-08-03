@@ -1,0 +1,117 @@
+@charset "UTF-8";
+
+/* @media screen { */
+#flexbox {
+	display: flex;
+	width: inherit;
+	height: 300px;
+	justify-content: space-around;
+}
+
+#indexVideo {
+	margin-bottom: 35px;
+}
+
+.myButton {
+	display: flex;
+	text-align: justify;
+}
+
+#one {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	order: 1;
+	justify-content: space-around;
+	border: 25px;
+	padding: 25px;
+}
+
+#two {
+	display: flex;
+	width: 33%;
+	height: 100%;
+	order: 2;
+	justify-content: space-around;
+	flex-direction: column;
+	border: 25px;
+	padding: 25px;
+}
+
+#AdT {
+	color: #d12e2e;
+}
+
+#three {
+	display: flex;
+	width: 33%;
+	order: 3;
+	justify-content: space-around;
+	border: 25px;
+	padding: 25px;
+	margin: 10px;
+}
+
+/*äußerste Box in main*/
+#flexbox-main {
+	display: flex;
+	width: inherit;
+}
+/*kind von flexbox-main*/
+#News {
+	display: flex;
+	flex-direction: column;
+	text-align: justify;
+}
+/*kind von news*/
+article img {
+	width: 15%;
+	height: 60%;
+	float: left;
+	margin: 10px 10px 10px 10px;
+}
+/*Kind von einem article*/
+#flexbox-main image {
+	margin: 10px 10px 10px 10px;
+	width: 30%;
+	float: left;
+}
+/*kind von article*/
+article ul {
+	list-style-image: url('../images/stern.png');
+	padding: 10px 10px 10px 10px;
+	margin: 10px 10px 10px 10px;
+}
+/*kind von flexbox.main*/
+/*Der Rahmen um alle 4 links, ob button oder text, ist gewollt*/
+#links-main {
+	display: flex;
+	flex-direction: column;
+	text-align: justify;
+	margin: 10px 10px 10px 10px;
+	padding: 10px 10px 10px 10px;
+	border-radius: 5px;
+	border-color: #808080;
+	border-style: solid;
+}
+/*Auch hier ist der Rahmen absicht*/
+#links-main>a {
+	line-height: 0.9;
+	padding: 10px 10px 10px 10px;
+	border-radius: 5px;
+	border-color: #808080;
+	border-style: solid;
+}
+
+#links-main>button {
+	width: inherit;
+	margin: 10px 0px 10px 0px;
+	padding: 10px 0px 10px 0px;
+	background-color: #c0c0c0;
+}
+
+@media print {
+	#flexbox {
+		display: none;
+	}
+}

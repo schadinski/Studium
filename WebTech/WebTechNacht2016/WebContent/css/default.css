@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+body {
+		background-color: #b8bdc7;
+	}
+/* 	.container-fluid { */
+/* 		background-color: #fff1bb; */
+/* 	} */
+	.jumbotron {
+		background-color: #65e34f;
+		text-align: center;
+		border-color: #808080;
+		border-style: solid;
+	
+/* 	#firstCanvas{ */
+/* 		border-color: #808080; */
+/* 		border-style: solid; */
+/* /* 		border-radius: 5px; */ */
+/* 	} */
